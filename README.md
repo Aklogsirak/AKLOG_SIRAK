@@ -1,1 +1,1 @@
-# aklog_sirak-assignment-2
+# AKLOG_SIRAK
