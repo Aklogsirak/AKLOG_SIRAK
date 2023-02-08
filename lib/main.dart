@@ -2,28 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(FoodOrderApp());
 
-class FoodOrderApp extends StatefulWidget {
-  @override
-  _FoodOrderAppState createState() => _FoodOrderAppState();
-}
-
-class _FoodOrderAppState extends State<FoodOrderApp> {
-  int _quantity = 0;
-
-  void _incrementQuantity() {
-    setState(() {
-      _quantity++;
-    });
-  }
-
-  void _decrementQuantity() {
-    setState(() {
-      if (_quantity > 0) {
-        _quantity--;
-      }
-    });
-  }
-
+class FoodOrderApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -52,34 +31,51 @@ class _FoodOrderAppState extends State<FoodOrderApp> {
               ),
               Container(
                 margin: EdgeInsets.only(top: 20),
-                child: Row(
-                  children: [
-                    IconButton(
-                      icon: Icon(Icons.remove),
-                      onPressed: _decrementQuantity,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 10, right: 10),
-                      child: Text(
-                        '$_quantity',
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.add),
-                      onPressed: _incrementQuantity,
-                    ),
-                  ],
+                child: Image.network(
+                  'https://www.example.com/burger.jpg',
+                  width: 100,
+                  height: 100,
+                ),
+              ),
+              Text(
+                'Burger',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               Container(
                 margin: EdgeInsets.only(top: 20),
-                child: RaisedButton(
-                  onPressed: () {},
-                  child: Text('Submit'),
+                child: Image.network(
+                  'https://www.example.com/fries.jpg',
+                  width: 100,
+                  height: 100,
                 ),
+              ),
+              Text(
+                'Fries',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 20),
+                child: Image.network(
+                  'https://www.example.com/drink.jpg',
+                  width: 100,
+                  height: 100,
+                ),
+              ),
+              Text(
+                'Drink',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 20),
               ),
             ],
           ),
